@@ -42,7 +42,7 @@ export default function TetrisControllers(props) {
 						onClick={onStart}
 						className={b('controller')}
 					>
-						Play/Pause
+						Start/Pause
 					</Button>
 				</Col>
 				<Col>
@@ -62,7 +62,7 @@ export default function TetrisControllers(props) {
 						onClick={onQuit}
 						className={b('controller')}
 					>
-						Reset
+						Restart
 					</Button>
 				</Col>
 				<Col>
@@ -75,7 +75,7 @@ export default function TetrisControllers(props) {
 							className={b('controller')}
 						>
 							<option value={5} key='default'>
-								Level
+								Difficulty
 							</option>
 							{new Array(20).fill(0).map((_val, index) => {
 								return (

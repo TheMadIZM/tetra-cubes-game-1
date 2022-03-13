@@ -713,7 +713,7 @@ class ClassicTetris {
 		this.gameOverLine = -1;
 
 		// frames until the piece automatically moves down
-		this.framesTilDrop = 36 + this._getFramesPerGridcell(this.level); // 18 + this._getFramesPerGridcell(this.level);
+		this.framesTilDrop = 35 + this._getFramesPerGridcell(this.level); // 18 + this._getFramesPerGridcell(this.level);
 
 		// initial state
 		this.previousGameState = ClassicTetris.STATE_DROP;

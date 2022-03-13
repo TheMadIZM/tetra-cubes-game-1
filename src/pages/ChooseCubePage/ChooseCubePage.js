@@ -7,12 +7,22 @@ import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 
 import { getCubesNft } from './utils';
 import testGen0Img from '../../images/gen0.png';
+import test88Img from '../../images/88.png';
+import test99Img from '../../images/nautcube.png';
+import test98Img from '../../images/doncube.png';
+import test97Img from '../../images/naut264.png';
 
 import './ChooseCubePage.scss';
 
 const b = cn('choose-cube-page');
 
-const TEST_CUBES = [{ src: testGen0Img, name: 'Gen 0' }];
+const TEST_CUBES = [
+	{ src: test88Img, name: '#88' },
+	{ src: testGen0Img, name: '#103' },
+	{ src: test98Img, name: '#203' },
+	{ src: test97Img, name: '#264' },
+	{ src: test99Img, name: '#287' },
+];
 
 Cube.propTypes = {
 	src: PropTypes.string,
@@ -89,19 +99,18 @@ export default function ChooseCubePage(props) {
 	return (
 		<div className={b()}>
 			<h4 className={b('section')}>
-				The tetris game will be colored
-				<br /> by chosen cube
+				Welcome to Tetra Cubes! Game pieces will vary based on your selected
+				cube.
 			</h4>
 			<div className={b('section')}>
 				<h5 className={b('subtitle')}>
-					My cubes
+					My Tetra Cubes
 					<span className='text-secondary'>({cubes.length})</span>
 				</h5>
 				{!cubes.length && (
 					<span className='text-secondary'>
 						{connected && 'You don\'t have cubes in the connected wallet'}
-						{!connected &&
-							'Connect a wallet to get information about your cubes'}
+						{!connected && 'Connect wallet to select your Tetra Cube.'}
 					</span>
 				)}
 				<Cubes {...props} cubes={cubes} />
@@ -109,11 +118,12 @@ export default function ChooseCubePage(props) {
 			{!cubes.length && (
 				<div className={b('section')}>
 					<h5 className={b('subtitle')}>
-						Common cubes
+						Free-Use Cubes
 						<span className='text-secondary'>({TEST_CUBES.length})</span>
 					</h5>
 					<span className='text-secondary'>
-						You can play without even being the holder
+						Able to select without being the holder, but can NOT post score to
+						leaderboard!
 					</span>
 					<Cubes {...props} cubes={TEST_CUBES} />
 				</div>

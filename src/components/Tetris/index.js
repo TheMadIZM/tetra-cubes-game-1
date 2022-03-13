@@ -8,7 +8,7 @@ import TetrisCanvas from './TetrisCanvas/TetrisCanvas';
 import TetrisControllers from './TetrisControllers/TetrisControllers';
 import ClassicTetris from '../../units/tetris/classic-tetris';
 
-import { LIGHT_GRAY, DARK_GRAY } from '../../constants';
+import { LIGHT_GRAY, DARK_GRAY, NOTDARK_GRAY } from '../../constants';
 
 import './index.scss';
 
@@ -45,7 +45,7 @@ function Tetris(props) {
 			canvasFont: '17px "Press Start 2P"',
 			canvasFontColor: DARK_GRAY,
 			ghostColor: [LIGHT_GRAY, 'transparent'],
-			gameOverColor: ['#fff', LIGHT_GRAY],
+			gameOverColor: [NOTDARK_GRAY],
 		};
 
 		tetris.current = new ClassicTetris(canvas, tetrisConfig);
@@ -85,7 +85,7 @@ function Tetris(props) {
 				</Col>
 				<Col>
 					<div className={b('cube-info')}>
-						<span className='text-secondary'>Chosen cube</span>
+						<span className='text-secondary'>Selected cube</span>
 						<Cube {...cube} />
 					</div>
 				</Col>
